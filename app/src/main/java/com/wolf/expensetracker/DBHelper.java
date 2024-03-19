@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -42,9 +44,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deleteExpense(String reason) {
+    public void deleteExpense(String expenseReason) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_EXPENSES, COLUMN_EXPENSE_REASON + "=?", new String[]{reason});
+        db.delete(TABLE_EXPENSES, COLUMN_EXPENSE_REASON + "=?", new String[]{expenseReason});
         db.close();
     }
 
@@ -76,9 +78,11 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT SUM(" + COLUMN_EXPENSE_AMOUNT + ") FROM " + TABLE_EXPENSES, null);
         if (cursor.moveToFirst()) {
             total = cursor.getDouble(0);
+            Log.d("DBHelper", "Total fetched from database: " + total); // Log total value
         }
         cursor.close();
         db.close();
         return total;
     }
+
 }

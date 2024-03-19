@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
             expenses.remove(position);
             adapter.notifyDataSetChanged();
             updateTotal();
+            // Fetch expenses again after deletion
+            expenses = dbHelper.getAllExpenses();
         });
         builder.setNegativeButton("No", (dialog, which) -> dialog.dismiss());
         builder.show();

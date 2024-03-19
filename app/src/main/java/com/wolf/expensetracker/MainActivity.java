@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!expenseReason.isEmpty() && !expenseAmount.isEmpty()) {
             dbHelper.addExpense(expenseReason, Double.parseDouble(expenseAmount));
-            expenses.add(expenseReason + ": ₹" + expenseAmount);
+            expenses.add(expenseReason + " - ₹" + expenseAmount);
             adapter.notifyDataSetChanged();
             expenseReasonEditText.setText("");
             expenseEditText.setText("");
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateTotal() {
         double total = dbHelper.getTotal();
-        totalTextView.setText("Total: ₹" + total);
+        totalTextView.setText("Total - ₹" + total);
     }
 
     private void showDeleteDialog(final int position) {

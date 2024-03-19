@@ -129,22 +129,23 @@
         android:id="@+id/expenseListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/addExpenseButton"
+        android:layout_above="@id/totalTextView"
         android:layout_marginTop="16dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
-        android:background="@android:color/transparent"/>
+        android:background="@drawable/listview_bg"/>
 
     <!-- Total TextView -->
     <TextView
         android:id="@+id/totalTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp"
         android:textColor="@color/text_color"
         android:textSize="18sp"
-        android:layout_alignParentBottom="true"/>
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"/>
 
 </RelativeLayout>
 

@@ -62,7 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
             do {
                 String reason = cursor.getString(cursor.getColumnIndex(COLUMN_EXPENSE_REASON));
                 double amount = cursor.getDouble(cursor.getColumnIndex(COLUMN_EXPENSE_AMOUNT));
-                expenses.add(reason + ": ₹" + amount);
+                expenses.add(reason + " - ₹" + amount);
             } while (cursor.moveToNext());
         }
         cursor.close();

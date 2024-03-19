@@ -133,7 +133,8 @@
         android:layout_marginTop="16dp"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
-        android:background="@drawable/listview_bg"/>
+        android:background="@drawable/listview_bg"
+        android:layout_margin="16dp"/>
 
     <!-- Total TextView -->
     <TextView

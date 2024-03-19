@@ -79,11 +79,14 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Delete Expense");
         builder.setMessage("Are you sure you want to delete this expense?");
         builder.setPositiveButton("Yes", (dialog, which) -> {
-            dbHelper.deleteExpense(expenses.get(position));
+            Toast.makeText(MainActivity.this, "Successfully deleted " + expenses.get(position), Toast.LENGTH_SHORT).show();
+            String selectedItem = expenses.get(position);
+            String[] parts = selectedItem.split(" - ₹");
+            String expenseReason = parts[0];
+            dbHelper.deleteExpense(expenseReason);
             expenses.remove(position);
             adapter.notifyDataSetChanged();
             updateTotal();
-            // Fetch expenses again after deletion
             expenses = dbHelper.getAllExpenses();
         });
         builder.setNegativeButton("No", (dialog, which) -> dialog.dismiss());

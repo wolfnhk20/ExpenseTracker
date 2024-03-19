@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="enter_expense_reason">Enter expense reason</string>
+    <string name="enter_expense_amount">Enter expense amount</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="reset">Reset</string>
+    <string name="expense_reason">Expense Reason</string>
+    <string name="expense_amount">Expense Amount</string>
+    <string name="app_description">Track your expenses efficiently!</string>
+</resources>

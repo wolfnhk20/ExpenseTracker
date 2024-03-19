@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/header_background_color"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_description"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:textStyle="italic"/>
+
+    </LinearLayout>
+
+    <!-- Expense Reason -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/expenseReasonTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/hint_text_color"
+        app:boxStrokeColor="@color/accent_color"
+        app:boxStrokeWidth="2dp"
+        app:boxCornerRadiusBottomEnd="4dp"
+        app:boxCornerRadiusBottomStart="4dp"
+        app:boxCornerRadiusTopEnd="4dp"
+        app:boxCornerRadiusTopStart="4dp"
+        app:startIconDrawable="@drawable/ic_reason"
+        app:startIconContentDescription="@string/expense_reason">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/expenseReasonEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/enter_expense_reason"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hint_text_color"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Expense Amount -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/expenseAmountTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenseReasonTextInputLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/hint_text_color"
+        app:boxStrokeColor="@color/accent_color"
+        app:boxStrokeWidth="2dp"
+        app:boxCornerRadiusBottomEnd="4dp"
+        app:boxCornerRadiusBottomStart="4dp"
+        app:boxCornerRadiusTopEnd="4dp"
+        app:boxCornerRadiusTopStart="4dp"
+        app:startIconDrawable="@drawable/ic_amount"
+        app:startIconContentDescription="@string/expense_amount">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/expenseEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="@string/enter_expense_amount"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/hint_text_color"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Add Expense Button -->
+    <Button
+        android:id="@+id/addExpenseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenseAmountTextInputLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/add_expense"
+        android:backgroundTint="@color/button_background_color"
+        android:textColor="@android:color/white"
+        android:elevation="2dp"
+        android:onClick="addExpense" />
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expenseAmountTextInputLayout"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentEnd="true"
+        android:text="@string/reset"
+        android:backgroundTint="@color/button_background_color"
+        android:textColor="@android:color/white"
+        android:elevation="2dp"
+        android:onClick="resetExpenses" />
+
+    <!-- Expense List -->
+    <ListView
+        android:id="@+id/expenseListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addExpenseButton"
+        android:layout_marginTop="16dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:background="@android:color/transparent"/>
+
+    <!-- Total TextView -->
+    <TextView
+        android:id="@+id/totalTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
+
